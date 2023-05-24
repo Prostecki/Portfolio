@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="menu" class="flex-box-spaceAround">
+        <div id="backTop">Mark Taratynov</div>
+        <div class="rightMenu flex-box">
+            <div class="headerLinks"><a href="#about">About</a></div>
+            <div class="headerLinks"><a href="#mellan">Work</a></div>
+            <div class="headerLinks"><a href="#contact">Contact</a></div>
+            <div class="headerLinks"><a href="https://github.com/Prostecki" target="_blank">GitHub</a></div>
+            <div class="headerLinks"><a href="https://www.linkedin.com/in/marktaratynov/" target="_blank">LinkedIn</a></div>
+        </div>
+    </header>
+    <main>
+        <div class="slideOne flex-box">
+            <div class="opacityLevel flex-box-column-spaceAround">
+                   <div class="titleOne">Hey! I'm Mark. Welcome to my portfolio page.
+                   </div> 
+                <div id="digInto" class="buttonProj">
+                    <a href="#mellan">To my Projects</a>
+                </div>
+            </div>
+        </div>
+        <div id="about" class="slideTwo">
+            <div class="photoOne">
+                <img src="img/2023-05-16 19.38.43.jpg" alt="">
+            </div>
+            <div class="slideTwoRight flex-box-column">
+                <div class="slideAbout">About</div>
+                <div class="titleTwo">title (change in js)</div>
+                <div class="describe">Web Development Intern with a passion for creating innovative and user-friendly websites. I have work experience in HTML, CSS, JavaScript, and also experienced in developing responsive and interactive websites.</div>
+            </div>
+        </div>
+        <div id="mellan" class="slidesBetween">
+            <div class="boxWrapTitle">
+                Do you wanna dig into next ?
+            </div>
+        </div>
+                
+        <div id="slideThree" class="slideThree flex-box-column">
+            <div id="projects" class="titleThree">Projects</div>
+            <div class="containerInside">
+                <div class="project borderTop">
+                    <div class="project_img">
+                        <img src="img/onlineShop.png" alt="">
+                    </div>
+                    <div class="projectDescribe">
+                       <div>
+                        On development stage. A joint project! An online store with authorization, a personal account, sending an order from the basket and an admin panel. The server part is written in PHP using classes. Sending GET and POST http requests. Database - MySQL.
+                        Please note: Docker is used for work!
+                        </div>
+                        <div class="projectLinks">
+                            <a href="">Deployment</a>
+                            <a href="">Open Source</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project borderTop">
+                    <div class="project_img">
+                        <img src="img/wallpapers__preview2.png" alt="">
+                    </div>
+                    <div class="projectDescribe">
+                        <div>
+                            The project is under development. Here is a catalog of desktop wallpapers, each of which contains information such as rating, name, and description. 
+                        </div>
+                        <div class="projectLinks">
+                            <a href="">Deployment</a>
+                            <a href="">Open Source</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project borderTop borderBot">
+                    <div class="project_img">
+                        <img src="img/anime__preview.png" alt="">
+                    </div>
+                    <div class="projectDescribe">
+                        <div>
+                            Anime catalog. Work with JSON API, use template methods and rendering with JS.
+                        </div>
+                        <div class="projectLinks">
+                            <a href="">Deployment</a>
+                            <a href="">Open Source</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project borderBot">
+                    <div class="project_img">
+                        <img src="img/parallax_effect.png" alt="">
+                    </div>
+                    <div class="projectDescribe">
+                        <div>
+                            Simple slides with parallax effect. Created with libraries swiper.js and particles.js
+                        </div> 
+                        <div class="projectLinks">
+                            <a href="">Deployment</a>
+                            <a href="">Open Source</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slideWhite"></div>
+        <div id="contact" class="slideFour flex-box-spaceAround">
+            <div class="leftSide">
+                <div class="titleFour">Contact</div>
+                <div class="solveFour">Got a problem to solve?</div>
+                <div class="describeFour">Let me know if you have any questions or ideas for discustion!</div>
+                <a class="mailTo" href="mailto:mark.taratynov@gmail.com">✉️ mark.taratynov@gmail.com</a>
+            </div>
+            <div class="rightSide">
+                <div class="flex-box-column" method="post">
+                    <div>
+                        <label for="typeYourName">Name</label>
+                        <input id="typeYourName" type="text" name="name" placeholder="Name"><br>
+                    </div>
+                    <div>
+                        <label for="typeYourEmail">Email</label>
+                        <input id="typeYourEmail" type="email" placeholder="write your e-mail"><br>
+                    </div>
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" type="text" maxlength="5000" placeholder="Write your message"></textarea><br>
+                    </div>
+                    
+                    <button id="submitButton">Hit me up!</button>
+                </div>
+            </div>
+            <div class="sentModal" class="dispNone">
+                <div class="modalWindow">
+                    <div class="textSent">Message sent!</div>
+                    <button id="closeBtn">Close</button>
+                </div>
+            </div>
+        </div>
+        <footer class="flex-box">
+            <div class="footerWrap flex-box-column">
+                <div class="footerPic">
+                    <img src="img/vuejs.webp" alt="">
+                </div>
+                <div class="categories flex-box-spaceAround">
+                    <div class="footerLink"><a href="#about">About</a></div>
+                    <div class="footerLink"v><a href="#mellan">Work</a></div>
+                    <div><a href="#contact">Contact</a></div>
+                </div>
+                <div class="footerLinks flex-box-spaceBetween">
+                    <div>Copyright © 2023 Mark Taratynov All Rights Reserved.</div>
+                    <div>
+                        <a href="https://github.com/Prostecki" target="_blank">GitHub</a>
+                    </div>
+                    <div>
+                        <a href="https://www.linkedin.com/in/marktaratynov/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

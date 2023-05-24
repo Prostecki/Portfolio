@@ -1,0 +1,623 @@
+@font-face {
+    font-family: 'Roboto Condensed', sans-serif;
+    src: url('fonts/RobotoCondensed-Regular.ttf');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+}
+
+main {
+    width: 100%;
+    height: auto;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-box-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flex-box-column-spaceAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flex-box-column-spaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.flex-box-spaceAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-box-spaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -------------------- Menu -------------------------- */
+
+header {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 10;
+    color: white;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.headerLinks > a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.headerLinks > a:hover {
+    color: rgb(96, 32, 245);
+    transition: all 0.3s;
+}
+
+.rightMenu {
+    width: 500px;
+}
+
+.rightMenu > div {
+    margin-left: 20px;
+}
+
+#backTop, .rightMenu > div {
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#backTop:hover {
+    color: rgb(96,32,245);
+}
+
+.rightMenu > div:hover {
+    color: rgb(96,32,245);
+}
+
+/* ------------------ Slide one ------------------------------ */
+
+.slideOne {
+    background: url('img/laptop_backlight_colorful_194324_2560x1600.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.opacityLevel {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
+
+.titleOne {
+    margin-bottom: 100px;
+    font-size: 4rem;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.boxWrapTitle {
+    width: 100%;
+}
+
+.slideOne.show {
+    .titleOne {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #digInto {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+#digInto > a {
+    text-decoration: none;
+    color: white;
+}
+
+#digInto {
+    color: white;
+    border: 1px solid whitesmoke;
+    padding: 14px;
+    width: 150px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(160px);
+    transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+    cursor: pointer;
+}
+
+#digInto:hover {
+  animation: background-animation 3s infinite; /* apply an animation during focus */
+}
+
+@keyframes background-animation {
+  0% { background-color: rgba(114, 114, 114, 0.4); }
+  25% {background-color: rgb(30, 65, 100); }
+  50% { background-color: rgb(96, 32, 245); }
+  100% { background-color: rgb(110, 23, 70); }
+}
+
+
+/* -------------------- Slide two ---------------------------- */
+
+.slideTwo {
+    background-color: rgb(17,25,33);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.photoOne {
+    width: 40%;
+    overflow: hidden;
+}
+
+.photoOne > img {
+    background: url('img/2023-05-16\ 19.38.43.jpg');
+    width: 100%;
+    transform: scale(1.5);
+}
+
+.overFlow {
+    overflow: hidden;
+    height: 100vh;
+    background-position: center;
+}
+
+
+.slideTwoRight {
+    height: 50%;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.slideAbout {
+    width: 100%;
+    font-size: 18px;
+    color: purple;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.titleTwo {
+    width: 100%;
+    font-size: 30px;
+    height: 35px;
+    text-align: start;
+    transition: all 1s ease-in-out;
+}
+
+.describe {
+    width: 100%;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: start;
+}
+
+/* ----------------- Slide between ------------------------------- */
+
+.slidesBetween.show2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.slidesBetween {
+    width: 50%;
+    margin: 0 auto;
+    height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+    transform: translateX(200px);
+}
+
+.boxWrapTitle {
+    width: 100%;
+
+}
+
+.slideWhite {
+    width: 100%;
+    background-color: white;
+    height: 100px;
+}
+
+/* ------------------- Slide three ----------------------------- */
+
+.slideThree {
+    width: 100%;
+    background-color: rgb(17,25,33);
+    color: white;
+    flex-wrap: wrap;
+}
+
+.titleThree {
+    font-size: 45px;
+    color: white;
+    font-weight: bolder;
+    padding: 10px;
+    text-align: center;
+}
+
+.containerInside {
+    width: 1200px;
+    padding: 15px;
+}
+
+.project {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 15px;
+}
+
+/* .project > .project_img {
+    width: 350px;
+} */
+
+.project {
+    .project_img {
+        width: 350px;
+    }
+}
+
+.project > div > img {
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px black;
+}
+
+.projectDescribe {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 600px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.borderTop {
+    border-top: 1px solid black;
+    box-sizing: border-box;
+}
+
+.borderBot {
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------ */
+
+
+
+/* --------------------- Slide four (form) --------------------------- */
+
+.slideFour {
+    background-color: rgb(17,25,33);
+    width: 100%;
+    height: 800px;
+    color: white;
+    margin: 0 auto;
+}
+
+.leftSide {
+    margin: 0 auto;
+}
+
+.titleFour {
+    color: rgb(96, 32, 245);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.solveFour {
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.describeFour {
+    color: grey;
+    margin-top: 2rem;
+}
+
+.rightSide {
+    width: 50%;
+}
+
+#name, #email, #message {
+    width: 500px;
+    background-color: rbg(33, 39, 48);
+}
+
+label {
+    width: 500px;
+    text-align: start;
+}
+
+.mailTo {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+    margin-top: 2rem;
+}
+
+.mailTo:hover {
+    color: rgb(96, 32, 245);
+    transition: all 0.3s;
+}
+
+form > input, textarea {
+    margin-top: 10px;
+    height: 40px;
+    border: .5px solid grey;
+    border-radius: 10px;
+    background-color: rgb(33, 39, 48);
+    color: white;
+    padding-left: 10px;
+    outline: none;
+}
+
+#message {
+    padding-top: 10px;
+}
+
+#message:focus {
+    border: 1px solid rgb(96,32,245);
+}
+
+input:focus {
+    border: 1px solid rgb(96,32,245);
+}
+
+#submitButton {
+    outline: none;
+    border: none;
+    width: 200px;
+    font-size: 18px;
+    height: 50px;
+    color: black;
+    background-color: aliceblue;
+}
+
+/* ----------------------- Modal window ------------------------- */
+
+.sentModal {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: -1;
+}
+
+.modalWindow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 300px;
+    background-color: rgb(17,25,33);
+}
+
+.textSent {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#closeBtn {
+    width: 150px;
+    font-size: 18px;
+    padding: 10px;
+}
+
+/* ------------------------ Slide five ------------------------- */
+
+.slideFive {
+    width: 100%;
+    height: 100%;
+}
+
+.imgFive {
+    height: 100vh;
+}
+
+.imgFive > img {
+    height: 100vh;
+}
+
+.rightSideFive {
+    margin: 0 auto;
+    width: 600px;
+    /* padding: 10px; */
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.titleSource {
+    color: rgb(96, 32, 245);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.behindFive {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.textSlideFive {
+    color: rgb(112, 117, 120);
+}
+
+.showMe {
+    color: white;
+    background-color: rgb(96,32,245);
+    border: none;
+    padding: 14px;
+    width: 130px;
+}
+
+/* ---------------------- Footer -------------------------- */
+
+footer {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(17,25,33);
+    color: white;
+    border-top: .5px solid grey;
+}
+
+.footerWrap {
+    width: 100%;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.categories {
+    width: 60%;
+    margin-bottom: 50px;
+    height: 50px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding: 60px;
+
+}
+
+.footerPic > img {
+    width: 50px;
+    padding: 5px;
+    margin: 25px 0 50px 0;
+    background-color: azure;
+    border-radius: 50%;
+}
+
+.footerLinks {
+    width: 60%;
+}
+
+.footerLink > a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+    font-size: 15px;
+    font-weight: bolder;
+    transition: all 0.3s;
+}
+
+.footerLink > a:hover {
+    color: rgb(96, 32, 245);
+    transition: all 0.3s;
+}
+
+
+@media (max-width: 400px) {
+   header {
+    font-size: 12px;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 10;
+    color: white;
+    margin: 0 auto;
+    /* backdrop-filter: blur(10px); */
+   }
+
+   #backTop {
+    font-size: 12px;
+   }
+
+   .headerLinks > a {
+    font-size: 12px;
+   }
+
+    /* --------- SLIDE ONE ---------- */
+
+   .slideOne {
+    width: 100%;
+    height: 850px;
+   }
+   
+   .titleOne {
+    font-size: 2rem;
+   }
+
+   /* --------- SLIDE TWO ---------- */
+   .slideTwo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 800px;
+    padding-top: 25px;
+   }
+
+   .photoOne {
+    width: 400px;
+   }
+
+   .photoOne > img {
+    background: url('img/2023-05-16\ 19.38.43.jpg');
+    width: 100%;
+    height: auto;
+   }
+
+   /* -------- Slide between -------- */
+
+   .boxWrapTitle {
+    width: 500px;
+   }
+}
