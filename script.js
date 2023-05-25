@@ -158,20 +158,16 @@ window.addEventListener('load', function() {
     window.scrollTo(0, 0);
 });
 
-//------------------ Form -------------------//
+//------------------ Function of sending inputs to telegram -------------------//
 
-const sendToTelega = document.getElementById('submitButton');
-const modalWindow = document.getElementById('sentModal');
+function sendToTelega() {
 
-sendToTelega.addEventListener('click', () => {
-    
+    //declare input name
     let name = document.getElementById('typeYourName').value;
-
+    //declare input email
     let email = document.getElementById('typeYourEmail').value;
-
+    //declaer input message
     let message = document.getElementById('message').value;
-
-    let modalSent = document.querySelector('.sentModal');
 
     if (name === '') {
         alert('Please, enter your name!');
@@ -187,14 +183,38 @@ sendToTelega.addEventListener('click', () => {
         return;
     };
 
+    // Validate email using regular expression
+    const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address!');
+            return;
+  }
+
+    //declare template for telegram message:
     let text = 'Message from ' + name + ' with adress ' + email + ': ' + message;
 
+    //check text on console
     console.log(text);
 
-    //declare function from outside
+    //function, which created below
     sendRequest(text);
 
-    //call the modal window, which says about success sending values to telegram
+    //function, which creates a modal window after success request sending
+    appearModal();
+
+    //Clear inputs
+    document.getElementById('typeYourName').value = '';
+    document.getElementById('typeYourEmail').value = '';
+    document.getElementById('message').value = '';
+
+};
+
+//--------------- Appearing a modal window after sending a request ------------------//
+
+function appearModal() {
+
+    //declare modalSent from div
+    let modalSent = document.querySelector('.sentModal');
 
     //Change opacity = 1
     modalSent.style.opacity = '1';
@@ -215,12 +235,7 @@ sendToTelega.addEventListener('click', () => {
             modalSent.style.display = 'none';
         }
     });
-
-    //Clear inputs
-    document.getElementById('typeYourName').value = '';
-    document.getElementById('typeYourEmail').value = '';
-    document.getElementById('message').value = '';
-});
+}
 
 //--------------- Send request function --------------//
 
