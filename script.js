@@ -1,7 +1,7 @@
 // Scroll a page in the beginning after load
-window.addEventListener('load', function() {
-    window.scrollTo(0, 0);
-});
+// window.addEventListener('load', function() {
+//     window.scrollTo(0, 0);
+// });
 
 //------------------ Menu --------------------//
 
@@ -139,8 +139,8 @@ const slideBetween = document.querySelector('.slidesBetween');
 
 window.addEventListener('scroll', function() {
 
+    let scrollPosition = window.pageYOffset;
     //current scroll value
-    const scrollPosition = window.pageYOffset;
 
     if (scrollPosition > prevScrollPosition) {
         scrollDirection = 'down';
@@ -157,6 +157,38 @@ window.addEventListener('scroll', function() {
 window.addEventListener('load', function() {
     window.scrollTo(0, 0);
 });
+
+//------------------ Appearing projects during scroll -------------------//
+
+//declare projects from class .containerInside
+const projects = document.querySelector('.containerInside');
+
+function appearProjects() {
+
+    //previous scroll value
+    let scrollPosition = window.pageYOffset;
+
+    if (scrollPosition > prevScrollPosition) {
+        scrollDirection = 'down';
+    } else {
+        scrollDirection = 'up';
+    }
+
+    //When scroll coordinate >= 1300px
+    if (scrollPosition >= 1300) {
+        //opacity: 1
+        projects.style.opacity = '1';
+        //add class to projects from CSS
+        projects.classList.add('show3');
+    }
+    //create timing for () equal 0.5s
+    setTimeout(() => {
+        appearProjects();
+    }, 500);
+}
+
+//During scroll down to 1300, after 0.5s running a function
+window.addEventListener('scroll', appearProjects());
 
 //------------------ Function of sending inputs to telegram -------------------//
 

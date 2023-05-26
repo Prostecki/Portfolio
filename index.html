@@ -44,10 +44,10 @@
             </div>
         </div>
                 
-        <div id="slideThree" class="slideThree flex-box-column">
+        <div id="slideThree" class="slideThree flex-box-column-spaceEvenly">
             <div id="projects" class="titleThree">Projects</div>
             <div class="containerInside">
-                <div class="project borderTop">
+                <div class="project">
                     <div class="project_img">
                         <img src="img/onlineShop.png" alt="">
                     </div>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project borderTop">
+                <div class="project">
                     <div class="project_img">
                         <img src="img/wallpapers__preview2.png" alt="">
                     </div>
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project borderTop borderBot">
+                <div class="project">
                     <div class="project_img">
                         <img src="img/anime__preview.png" alt="">
                     </div>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project borderBot">
+                <div class="project">
                     <div class="project_img">
                         <img src="img/parallax_effect.png" alt="">
                     </div>
@@ -115,26 +115,29 @@
                 <a class="mailTo" href="mailto:mark.taratynov@gmail.com">✉️ mark.taratynov@gmail.com</a>
             </div>
             <div class="rightSide">
-                <div class="flex-box-column" method="post">
+                <div id="formWindow" class="flex-box-column" method="post">
                     <div>
                         <label for="typeYourName">Name</label>
                         <input id="typeYourName" type="text" name="name" placeholder="Name"><br>
                     </div>
                     <div>
                         <label for="typeYourEmail">Email</label>
-                        <input id="typeYourEmail" type="email" placeholder="write your e-mail"><br>
+                        <input id="typeYourEmail" type="email" placeholder="Write your e-mail"><br>
                     </div>
                     <div>
                         <label for="message">Message</label>
                         <textarea id="message" name="message" type="text" maxlength="5000" placeholder="Write your message"></textarea><br>
                     </div>
                     
-                    <button id="submitButton" onclick="sendToTelega()">Hit me up!</button>
+                    <button id="submitButton" onclick="sendToTelega()">
+                        <span class="hitMeBtn">Hit me up!</span>
+                    </button>
                 </div>
             </div>
             <div class="sentModal" class="dispNone">
                 <div class="modalWindow">
-                    <div class="textSent">Message sent!</div>
+                    <div class="textSent">Success!</div>
+                    <p>We get in touch with you soon.</p>
                     <button id="closeBtn">Close</button>
                 </div>
             </div>
@@ -147,14 +150,14 @@
                 <div class="categories flex-box-spaceAround">
                     <div class="footerLink"><a href="#about">About</a></div>
                     <div class="footerLink"v><a href="#mellan">Work</a></div>
-                    <div><a href="#contact">Contact</a></div>
+                    <div class="footerLink"><a href="#contact">Contact</a></div>
                 </div>
                 <div class="footerLinks flex-box-spaceBetween">
                     <div>Copyright © 2023 Mark Taratynov All Rights Reserved.</div>
-                    <div>
+                    <div class="footerLink">
                         <a href="https://github.com/Prostecki" target="_blank">GitHub</a>
                     </div>
-                    <div>
+                    <div class="footerLink">
                         <a href="https://www.linkedin.com/in/marktaratynov/" target="_blank">LinkedIn</a>
                     </div>
                 </div>

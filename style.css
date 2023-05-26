@@ -5,6 +5,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 body {
@@ -31,6 +32,25 @@ main {
     flex-direction: column;
 }
 
+.flex-box-spaceAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-box-spaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-box-colum-spaceEvenly {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
 .flex-box-column-spaceAround {
     display: flex;
     justify-content: space-around;
@@ -46,17 +66,6 @@ main {
 }
 
 
-.flex-box-spaceAround {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.flex-box-spaceBetween {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 /* -------------------- Menu -------------------------- */
 
@@ -238,12 +247,6 @@ header {
 
 /* ----------------- Slide between ------------------------------- */
 
-.slidesBetween.show2 {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-
 .slidesBetween {
     width: 50%;
     margin: 0 auto;
@@ -255,6 +258,11 @@ header {
     transition: all 0.8s ease-in-out;
     opacity: 0;
     transform: translateX(200px);
+}
+
+.slidesBetween.show2 {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .boxWrapTitle {
@@ -272,9 +280,12 @@ header {
 
 .slideThree {
     width: 100%;
+    height: auto;
     background-color: rgb(17,25,33);
     color: white;
     flex-wrap: wrap;
+    position: relative;
+    padding: 15px 0 25px 0;
 }
 
 .titleThree {
@@ -286,30 +297,45 @@ header {
 }
 
 .containerInside {
-    width: 1200px;
-    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    transform: translateY(500px);
+    /* animation: appearing 3s ease-in-out; */
 }
+
+.containerInside.show3 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 
+@keyframes appearing {
+    0% { opacity: 0.2; }
+    25% {opacity: 0.4;}
+    50% {opacity: 0.6;}
+    75% {opacity: 0.8;}
+    100% {opacity: 1;}
+ 
+} */
 
 .project {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
-    width: 100%;
+    flex-direction: column;
+    width: 400px;
     padding: 15px;
-}
-
-/* .project > .project_img {
-    width: 350px;
-} */
-
-.project {
-    .project_img {
-        width: 350px;
-    }
+    border: .5px solid rgb(61, 61, 61);
+    border-radius: 10px;
+    margin: 15px 10px 0 5px;
+    opacity: 1;
 }
 
 .project > div > img {
-    width: 400px;
+    width: 250px;
     border-radius: 10px;
     box-shadow: 0px 5px 10px black;
 }
@@ -318,20 +344,43 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 600px;
-    font-size: 18px;
+    width: 400px;
+    font-size: 15px;
     text-align: center;
 }
 
+.projectDescribe > div {
+    margin: 10px 0 10px 0;
+}
+
+.projectLinks {
+    margin: 15px 0 15px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.projectLinks > a {
+    color: white;
+    text-decoration: none;
+    /* font-style: oblique; */
+    transition: all .3s ease-in-out;
+    font-weight: bolder;
+}
+
+.projectLinks > a:hover {
+    color: rgb(96, 32, 245);
+}
+
 .borderTop {
-    border-top: 1px solid black;
+    border-top: 1px solid grey;
     box-sizing: border-box;
 }
 
 .borderBot {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid grey;
     box-sizing: border-box;
 }
+
 
 /* ------------------------------------------------ */
 
@@ -373,14 +422,9 @@ header {
     width: 50%;
 }
 
-#name, #email, #message {
-    width: 500px;
+#typeYourName, #typeYourEmail, #message {
+    width: 400px;
     background-color: rbg(33, 39, 48);
-}
-
-label {
-    width: 500px;
-    text-align: start;
 }
 
 .mailTo {
@@ -396,8 +440,10 @@ label {
     transition: all 0.3s;
 }
 
-form > input, textarea {
+#formWindow > div > input, textarea {
+    text-align: start;
     margin-top: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
     height: 40px;
     border: .5px solid grey;
     border-radius: 10px;
@@ -405,6 +451,12 @@ form > input, textarea {
     color: white;
     padding-left: 10px;
     outline: none;
+}
+
+#formWindow > div {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 #message {
@@ -415,18 +467,39 @@ form > input, textarea {
     border: 1px solid rgb(96,32,245);
 }
 
-input:focus {
+#message:focus, #typeYourName:focus, #typeYourEmail:focus {
     border: 1px solid rgb(96,32,245);
 }
 
 #submitButton {
+    margin-top: 20px;
+    background-color: rgb(96,32,245);
     outline: none;
     border: none;
+    border-radius: 10px;
     width: 200px;
     font-size: 18px;
     height: 50px;
-    color: black;
-    background-color: aliceblue;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#submitButton:hover {
+    background-color: rgb(30, 65, 100);
+    transition: all 0.3s ease-in-out;
+        .hitMeBtn {
+            transform: scale(1.2);
+            text-align: center;
+    }
+}
+
+.hitMeBtn {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 50px;
+    transition: all 0.3s ease-in-out;
+
 }
 
 /* ----------------------- Modal window ------------------------- */
@@ -447,11 +520,13 @@ input:focus {
 .modalWindow {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     width: 500px;
     height: 300px;
-    background-color: rgb(17,25,33);
+    background-color: rgba(114, 114, 114);
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 .textSent {
@@ -463,6 +538,17 @@ input:focus {
     width: 150px;
     font-size: 18px;
     padding: 10px;
+    background-color: rgb(60, 60, 60);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    font-size: 18px;
+    height: 50px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px black;
 }
 
 /* ------------------------ Slide five ------------------------- */
