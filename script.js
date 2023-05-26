@@ -199,6 +199,9 @@ function sendToTelega() {
     //function, which created below
     sendRequest(text);
 
+    modalSent.style.transition = 'all 0.7s ease-in-out';
+    modalSent.style.display = 'flex';
+
     //function, which creates a modal window after success request sending
     appearModal();
 
@@ -211,13 +214,15 @@ function sendToTelega() {
 
 //--------------- Appearing a modal window after sending a request ------------------//
 
-function appearModal() {
+//declare modal window in constant variable for all functions
+const modalSent = document.querySelector('.sentModal');
 
-    //declare modalSent from div
-    let modalSent = document.querySelector('.sentModal');
+
+function appearModal() {
 
     //Change opacity = 1
     modalSent.style.opacity = '1';
+    modalSent.style.transition = 'all 0.7s ease-in-out';
     //Change default z-index to upper than early, for visible
     modalSent.style.zIndex = '10';
 
@@ -232,6 +237,7 @@ function appearModal() {
     //During click to any place, we change modal's style display to 'none'
     window.addEventListener('click', (event)=> {
         if (event.target === modalSent) {
+            modalSent.style.transition = 'all 0.7s ease-in-out';
             modalSent.style.display = 'none';
         }
     });
