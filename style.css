@@ -529,6 +529,10 @@ header {
     border: 1px solid black;
 }
 
+.modalOpen {
+    overflow: hidden;
+}
+
 .textSent {
     font-size: 30px;
     font-weight: bolder;
